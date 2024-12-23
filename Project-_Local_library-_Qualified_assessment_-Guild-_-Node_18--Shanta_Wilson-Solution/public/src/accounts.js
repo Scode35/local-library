@@ -1,15 +1,22 @@
 function findAccountById(accounts, id) {
   // YOUR SOLUTION HERE
+   return accounts.find(account => account.id === id);
   // Hint: You can use the [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) method here. 
 }
 
 function sortAccountsByLastName(accounts) {
   // YOUR SOLUTION HERE
+   return accounts.sort((a, b) => {
+    const lastNameA = a.name.last.toLowerCase();
+    const lastNameB = b.name.last.toLowerCase();
+    return lastNameA.localeCompare(lastNameB);
+  });
   // Hint: You can use the [`sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method here. 
 }
 
 function getAccountFullNames(accounts) {
   // YOUR SOLUTION HERE
+   return accounts.map(account => `${account.name.first} ${account.name.last}`);
   // Hint: You can use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method here.
 }
 
